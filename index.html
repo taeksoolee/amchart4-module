@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>amcharts4</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    
+    <div id="chartdiv"></div>
+
+    <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+
+    <script src="script.js"></script>
+    <script src="demo.js"></script>
+    <script>
+        async function init(){
+            const data = await getDemoData();
+            const keys = ["one", "two"];
+            const chartId = 'chartdiv';
+            createChart(
+                {
+                    data, 
+                    keys,
+                    title: 'chart title',
+                    isLegend: true
+                }, chartId);
+        }
+
+        init();
+        
+
+
+    </script>
+</body>
+</html>
